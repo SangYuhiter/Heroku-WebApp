@@ -6,6 +6,7 @@
 @Desc  : 
 """
 from flask import Flask, render_template, request
+import random
 
 app = Flask(__name__)
 
@@ -14,14 +15,15 @@ app = Flask(__name__)
 @app.route("/input", methods=["GET", "POST"])
 def input():
     if request.method == "POST":
-        question = request.form["question"]
-        result = get_result(question)
-        return render_template("input.html", result=result)
-    return render_template("input.html", result="")
+        input_text = request.form["input_text"]
+        result = compute_emotion(input_text)
+        return render_template("input.html", input_text=input_text, result=result)
+    return render_template("input.html", input_text="", result="")
 
 
-def get_result(question):
-    return "SangYu Says:"+question
+def compute_emotion(input_text):
+    emotion_list = ["正向", "中立", "负向"]
+    return emotion_list[random.randrange(0, len(emotion_list))]
 
 
 if __name__ == '__main__':

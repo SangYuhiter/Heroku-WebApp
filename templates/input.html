@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SangYu</title>
+    <title>文本情感计算</title>
 </head>
 <body>
 
 <form method="post">
-    <label>文本：</label><input type="text" name="question"><br/>
+    <label>输入文本：</label><input type="text" name="input_text"><br/>
     <input type="submit" value="提交">
 </form>
+<p>提交文本：{{input_text}}</p>
 <p>计算结果：{{result}}</p>
 </body>
 </html>
