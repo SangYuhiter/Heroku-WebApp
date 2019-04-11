@@ -7,6 +7,7 @@
 """
 from flask import Flask, render_template, request
 import random
+from fastTextClassifier import sentence_input
 
 app = Flask(__name__)
 
@@ -16,7 +17,7 @@ app = Flask(__name__)
 def input():
     if request.method == "POST":
         input_text = request.form["input_text"]
-        result = compute_emotion(input_text)
+        result = sentence_input(input_text)
         return render_template("input.html", input_text=input_text, result=result)
     return render_template("input.html", input_text="", result="")
 
