@@ -10,7 +10,7 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import fasttext_pybind as fasttext
+from fTModel import fasttext_pybind as fasttext
 import numpy as np
 
 loss_name = fasttext.loss_name
