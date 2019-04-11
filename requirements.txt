@@ -8,5 +8,3 @@ MarkupSafe==1.1.1
 numpy==1.16.2
 pybind11==2.2.4
 Werkzeug==0.15.2
-Cython==0.29.6
-fasttext==0.8.3
