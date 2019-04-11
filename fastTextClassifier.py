@@ -6,7 +6,7 @@
 @Desc  : fastText分类器
 """
 import jieba
-import fastText.FastText as ff
+import fTModel.FastText as ff
 
 
 def load_stop_words():
