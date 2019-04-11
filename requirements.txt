@@ -1,7 +1,11 @@
 Click==7.0
+fasttext==0.8.22
 Flask==1.0.2
 gunicorn==19.9.0
 itsdangerous==1.1.0
+jieba==0.39
 Jinja2==2.10.1
 MarkupSafe==1.1.1
+numpy==1.16.2
+pybind11==2.2.4
 Werkzeug==0.15.2

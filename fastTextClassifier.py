@@ -5,11 +5,8 @@
 @Date  : 2019/4/11 11:38
 @Desc  : fastText分类器
 """
-from pyhanlp import *
+import jieba
 import fastText.FastText as ff
-def segment_hanlp(sentence):
-    nlp_tokenizer = JClass("com.hankcs.hanlp.tokenizer.BasicTokenizer")
-    return [seg.word for seg in nlp_tokenizer.segment(sentence)]
 
 
 def load_stop_words():
@@ -67,8 +64,6 @@ def load_positive_emoticons():
 
 def sentence_input(sentence):
     classifier = ff.load_model("fTModel/model/train")
-    stop_words = load_stop_words()
-    seg_line = segment_hanlp(sentence)
     positive_emoticons = load_positive_emoticons()
     negative_emoticons = load_negative_emoticons()
     punctuation_words = load_punctuation_words()
@@ -91,7 +86,7 @@ def sentence_input(sentence):
     print(sentence)
     # 对句子进行分词,去除停用词，识别情感词，并为情感词打上特殊标记
     line = sentence.replace("蒙牛", "")
-    seg_line = segment_hanlp(line)
+    seg_line = [seg for seg in jieba.cut(line)]
     print(seg_line)
     add_str = ""
     for word in seg_line:
