@@ -6,7 +6,7 @@
 @Desc  : fastText分类器
 """
 import jieba
-import fasttext
+import fTModel.FastText as ff
 
 
 def load_stop_words():
@@ -63,7 +63,7 @@ def load_positive_emoticons():
     return set([line.strip() for line in open(positive_emoticons_path, "r", encoding="utf-8").readlines()])
 
 def sentence_input(sentence):
-    classifier = fasttext.load_model("fTModel/model/train")
+    classifier = ff.load_model("fTModel/model/train")
     positive_emoticons = load_positive_emoticons()
     negative_emoticons = load_negative_emoticons()
     punctuation_words = load_punctuation_words()
