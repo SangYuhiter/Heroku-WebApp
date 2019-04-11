@@ -5,6 +5,8 @@
 @Date  : 2019/4/11 11:38
 @Desc  : fastText分类器
 """
+import os
+os.system("pip install fasttext-0.8.22-cp36-cp36m-win_amd64.whl")
 import jieba
 import fTModel.FastText as ff
 
